@@ -123,9 +123,10 @@ button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid 
 .mistake .r { color: var(--good); font-weight: 700; }
 @media (max-width: 560px) { .mistake { grid-template-columns: 1fr; gap: 0; } .mistake .arrow { display: none; } .mistake { padding-bottom: 8px; border-bottom: 1px solid var(--rule); } }
 
-.levels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 18px; }
-.lvl { background: var(--sunk); border: 2px solid transparent; border-radius: 12px; padding: 10px 8px; text-align: center; line-height: 1.25; }
-.lvl b { display: block; font-family: var(--display); font-size: 17px; }
+.levels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-bottom: 18px; }
+.lvl { min-width: 0; overflow-wrap: anywhere; background: var(--sunk); border: 2px solid transparent; border-radius: 12px; padding: 10px 6px; text-align: center; line-height: 1.25; }
+.lvl b { display: block; font-family: var(--display); font-size: clamp(14px, 3.8vw, 17px); }
+@media (max-width: 480px) { .panel { padding: 16px; } .lvl .zh { display: none; } }
 .lvl span { font-size: 13px; color: var(--muted); }
 .lvl.active { border-color: var(--c); background: var(--surface); }
 
